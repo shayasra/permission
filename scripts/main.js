@@ -1,19 +1,23 @@
-function access() {
+function getAccessPermission() {
     let age = prompt("Enter Your Age");
-    if (!age) {
-        access();
+    if(!age){
+        getAccessPermission();
     }
-    else if (age >= 18) {
-        alert("Access Granted");
+    else if (getAge(age)) {
+        return alert("Permission to Access Agreed");
+    }
+    else {
+        return alert("Permission to Access Denied");
+    }
+
+}
+
+function getAge(age) {
+ if (age >= 18) {
+        return true;
     } else {
-        let permit = confirm("Do you have Permission from Parents");
-        if (permit) {
-            alert("Access Granted");
-        }
-        else {
-            alert("Access Denied");
-        }
+        return confirm("Do you have Permission from Parents");
     }
 }
 
-access();
+getAccessPermission();
